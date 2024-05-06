@@ -1,0 +1,11 @@
+# Галахова Елена, 16 когорта, Дипломный проект
+# SQL Задание 1
+
+# Список логинов курьеров
+
+SELECT c.login,
+       COUNT(o.id) AS orders_count
+FROM "Couriers" AS c
+JOIN "Orders" AS o ON c.id = o."courierId"
+WHERE o."inDelivery" = true
+GROUP BY c.login;
